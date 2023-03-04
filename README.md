@@ -54,3 +54,35 @@ Kebutuhan pengguna : Aplikasi yang dapat membantu mendiagnosis penyakit kulit se
 ### Entity Relationship Diagram : <br>
 <img width="507" alt="image" src="https://user-images.githubusercontent.com/82350726/222908225-08237101-47f4-4da1-80f6-3e749beff24e.png"> <br>
 
+### Gantt-Chart  : <br>
+<img width="507" alt="image" src="https://user-images.githubusercontent.com/79191854/222908831-04e24ddf-8fe1-4a63-8fd4-81a511718575.png"> <br>
+
+### Lo-Fi Wireframe : <br>
+1. Sign Up Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222913276-734039a6-de36-44f1-947b-c4f016e91bbb.png"> <br>
+2. Login Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222913369-8d1b1562-1e21-4812-b1cb-9476aeddf2ea.png"> <br>
+3. Profil Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222913410-d4b5d195-0a95-4db7-a1e7-bc2cea4e46c6.png"> <br>
+4. History Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222913499-325ce4fb-347f-4da3-ac78-e026cdae3db3.png"> <br>
+5. Home Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222913544-22000b23-85b9-46d6-b78e-233756eae2fd.png"> <br>
+6. Skin Trivia Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222913612-3cbfb927-b8ed-4176-b2d6-379610b20d9e.png"> <br>
+7. Input Skin Trivia Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222913762-39c7d4b8-b7c3-42e2-8e28-cef8eb44ab45.png"> <br>
+8. Diagnose Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222913940-5c27ac59-7b64-4f61-b2e7-54a632ba3d61.png"> <br>
+9. Input Skin Disease Page <br>
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/79191854/222914043-0284958a-428d-4c0d-b770-950942bcd94c.png"> <br>
+
+
+
+
+
+
+
+
+
+
