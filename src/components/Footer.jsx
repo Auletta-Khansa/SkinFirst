@@ -7,16 +7,16 @@ const Footer = () => {
         <div className='bg-[#D4D2C5] px-40'>
             <div className='flex justify-between pt-10 text-[#011A16] text-[20px]'>
                 <div className='flex items-center'>
-                    <a href='' className='min-w-3/4 w-3/4 '><img src={ImgLogo} /></a>
+                    <a href='#home' className='min-w-3/4 w-3/4 '><img src={ImgLogo} alt="img-logo" /></a>
                 </div>
                 <div>
                     <div>
                         <h1 className='border-b-2 border-black font-bold'>Menu</h1>
                         <ul className='text-[#011A16] font-medium'>
-                            <li><a href='' className='hover:text-[#011a1671]'>Home</a></li>
-                            <li><a href='' className='hover:text-[#011a1671]'>Skin Trivia</a></li>
-                            <li><a href='' className='hover:text-[#011a1671]'>Diagnostic</a></li>
-                            <li><a href='' className='hover:text-[#011a1671]'>Profile</a></li>
+                            <li><a href='#home' className='hover:text-[#011a1671]'>Home</a></li>
+                            <li><a href='#home' className='hover:text-[#011a1671]'>Skin Trivia</a></li>
+                            <li><a href='#home' className='hover:text-[#011a1671]'>Diagnostic</a></li>
+                            <li><a href='#home' className='hover:text-[#011a1671]'>Profile</a></li>
                         </ul>
                     </div>
                 </div>

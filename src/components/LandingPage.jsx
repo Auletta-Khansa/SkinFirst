@@ -12,7 +12,7 @@ const LandingPage = () => {
                 <button className='bg-[#F0EFE1] hover:bg-[#c6c4a9] text-[#00695B] font-medium duration-200 hover:text-[#679a94] px-20 py-4 text-[28px] rounded-full text-[]'>Get started</button>
             </div>
             <div className='pt-40 flex items-center animate-spin '>
-                <img src={ImgLogo} className=' select-none'/>
+                <img src={ImgLogo} alt="img-logo" className=' select-none'/>
             </div>
         </div>
     </div>
