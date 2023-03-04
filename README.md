@@ -36,3 +36,17 @@ Kompetitor 2<br>
 Kompetitor 3<br>
 ![image](https://user-images.githubusercontent.com/82350726/222880052-e9b5f088-a8e1-43c2-a7e2-45765df7d611.png)<br>
 
+
+### Tujuan Produk :<br>
+1. Merancang sebuah sistem berbasis web yang berfungsi untuk mendeteksi dan mengenali gejala penyakit kulit yang dialami oleh user <br>
+2. Menyajikan hasil diagnosis penyakit kulit beserta rekomendasi tindakan yang dapat dilakukan <br>
+3. Menyajikan konten pengetahuan mengenai kulit yang disebut sebagai Skin Trivia kepada user <br>
+3. Mengimplementasikan teknologi Artificial Intelligence dalam produk yang telah dibuat <br>
+
+### Pengguna Potensial dan Kebutuhan Para Pengguna <br>
+Pengguna potensial : Seluruh masyarakat. <br>
+Kebutuhan pengguna : Aplikasi yang dapat membantu mendiagnosis penyakit kulit secara dini dengan cara yang cepat dan akurat dan tidak terbatas oleh tempat dan waktu. <br>
+
+### Use Case Diagram <br>
+<img width="507" alt="image" src="https://user-images.githubusercontent.com/79238162/222907813-a7bae7f1-e32c-4661-9cbe-a121d601b5cf.png"> <br>
+
