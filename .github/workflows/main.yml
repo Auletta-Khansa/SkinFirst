@@ -1,4 +1,4 @@
-name: Test, Build, and Deploy | SkinFirst
+name: Test, Build, and Deploy | Aplikasi SkinFirst 
 
 on:
   push:
