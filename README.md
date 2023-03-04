@@ -7,12 +7,16 @@ Anggota 1 : Auletta Khansa Pradiviasari - 20/456359/TK/50489<br>
 Anggota 2: Wardatul Radhiyyah - 20/456381/TK/50511<br>
 
 "Project Senior Project TI"<br>
-Instansi (Departemen Teknologi Elektro dan Teknologi Informasi, Fakultas Teknik, Universitas Gadjah Mada)
+Instansi (Departemen Teknologi Elektro dan Teknologi Informasi, Fakultas Teknik, Universitas Gadjah Mada)<br>
+
 Nama Produk : SkinFirst<br>
+
 Jenis Produk : Aplikasi Berbasis Web<br>
+
 Latar Belakang :<br>
 Kulit merupakan organ yang sangat berfungsi pada manusia. Kulit terletak pada sisi terluar manusia yang dapat terkena banyak jenis masalah kesehatan, termasuk infeksi, alergi, dan penyakit autoimun. Masyarakat awam masih mengalami kesulitan dalam merawat kulit dan kurangnya pemahaman terhadap kesehatan kulit memiliki gejala yang mirip, dan sulit bagi orang awam untuk membedakan antara satu kondisi kulit dengan yang lain. Oleh
 karena itu dibutuhkan Aplikasi sistem pakar yang dapat membantu orang awam dalam memeriksa kondisi kulit dengan memasukkan gejala yang diamati dan upload gambar kondisi kulit yang dialami. Aplikasi ini dapat membantu mendiagnosis penyakit kulit secara dini dengan cara yang cepat dan akurat, sehingga sebelum pasien berkonsultasi lebih lanjut dengan dokter spesialis kulit untuk perawatan lebih lanjut.<br>
+
 Rumusan Permasalahan : <br>
 - Bagaimana merancang sistem pakar yang dapat mengenali gejala-gejala penyakit kulit ?<br>
 - Bagaimana menyajikan hasil diagnosis penyakit kulit dengan cara yang mudah dipahami oleh pengguna ?<br>
