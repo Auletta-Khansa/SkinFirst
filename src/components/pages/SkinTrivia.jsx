@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import AtopicDermatitis from '../assets/img/atopic-dermatitis-neck.jpg'
 
 const SkinTrivia = () => {
@@ -16,7 +17,7 @@ const SkinTrivia = () => {
             </div>
         </div>
         <div className=''>
-            <a href='/input-trivia' className='text-[28px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</a>
+            <Link to='/skin-trivia/input-informatons' className='text-[28px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link>
         </div>
     </section>
 
