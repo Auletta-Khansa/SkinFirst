@@ -9,20 +9,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <>
-          <Navbar/>
-        </>
+      <BrowserRouter basename="/">
+        <Navbar/>
         <Routes>
           <Route path="/home" element={<LandingPage/>}/>
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/skin-trivia" element={<SkinTrivia/>}/>
-          <Route path="/input-trivia" element={<InputSkinTrivia/>}/>
+          <Route path="/skin-trivia/input-informatons" element={<InputSkinTrivia/>}/>
         </Routes>
-      </BrowserRouter>
-      <>
         <Footer/>
-      </>
+      </BrowserRouter>
     </>
   );
 }
