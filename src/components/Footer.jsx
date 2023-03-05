@@ -13,8 +13,8 @@ const Footer = () => {
                     <div>
                         <h1 className='border-b-2 border-black font-bold'>Menu</h1>
                         <ul className='text-[#011A16] font-medium'>
-                            <li><a href='#home' className='hover:text-[#011a1671]'>Home</a></li>
-                            <li><a href='#home' className='hover:text-[#011a1671]'>Skin Trivia</a></li>
+                            <li><a href='/home' className='hover:text-[#011a1671]'>Home</a></li>
+                            <li><a href='/skin-trivia' className='hover:text-[#011a1671]'>Skin Trivia</a></li>
                             <li><a href='#home' className='hover:text-[#011a1671]'>Diagnostic</a></li>
                             <li><a href='#home' className='hover:text-[#011a1671]'>Profile</a></li>
                         </ul>
