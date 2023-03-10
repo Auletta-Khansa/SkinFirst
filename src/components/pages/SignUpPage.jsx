@@ -7,7 +7,7 @@ const SignUpPage = () => {
         <section class="min-h-[50vh] px-30 pt-40 pb-20 bg-gray-50">
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <a href="#home" class="flex items-center mb-6 text-3xl font-bold text-primary-0 ">
-                {/* <img class="w-8 h-8 mr-2" src={ImgLogo} alt="img-logo"> </img> */}
+                {/* <img class="w-8 h-8 mr-2" rrrsrc={ImgLogo} alt="img-logo"> </img> */}
                 Sign Up    
                 </a>
                 <div class="w-full bg-primary-0 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
