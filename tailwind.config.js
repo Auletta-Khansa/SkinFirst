@@ -5,10 +5,11 @@ module.exports = {
     "./src/components/pages/LandingPage.jsx",
     "./src/components/pages/SkinTrivia.jsx",
     "./src/components/pages/InputSkinTrivia.jsx",
+    "./src/components/pages/Diagnostic.jsx",
     "./src/components/Footer.jsx",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
