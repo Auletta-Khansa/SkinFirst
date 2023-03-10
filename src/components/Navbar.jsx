@@ -15,7 +15,7 @@ const Navbar = () => {
                   <ul className='flex justify-center gap-10 py-2 text-[#011A16]'>
                     <li><Link to='/home' className='hover:text-[#011a1671]'>Home</Link></li>
                     <li><Link to='/skin-trivia' className='hover:text-[#011a1671]'>Skin Trivia</Link></li>
-                    <li><Link to='#home' className='hover:text-[#011a1671]'>Diagnostic</Link></li>
+                    <li><Link to='/diagnostic' className='hover:text-[#011a1671]'>Diagnostic</Link></li>
                     <li><Link to='#home' className='hover:text-[#011a1671]'>Profile</Link></li>
                   </ul>
                   <div className='flex items-center'>

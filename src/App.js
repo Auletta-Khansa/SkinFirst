@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/skin-trivia" element={<SkinTrivia/>}/>
           <Route path="/skin-trivia/input-informatons" element={<InputSkinTrivia/>}/>
-          <Route path="/Diagnostic" element={<Diagnostic/>}/>
+          <Route path="/diagnostic" element={<Diagnostic/>}/>
           <Route path="/login" element={<LoginPage/>}/>
         </Routes>
         <Footer/>
