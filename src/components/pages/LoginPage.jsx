@@ -18,7 +18,7 @@ const LoginPage = () => {
                         <form class="space-y-4 md:space-y-6" action="#">
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-primary-1">Username</label>
-                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@company.com" required="">
+                                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="admin123" required="">
                                 </input>
                             </div>
                             <div>
