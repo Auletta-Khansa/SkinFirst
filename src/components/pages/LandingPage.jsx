@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import ImageDiagnostic from "../assets/img/image-landing-page.png"
 
 const LandingPage = () => {
   return (
@@ -42,9 +45,40 @@ const LandingPage = () => {
     </div>
 
     {/* */}
-    <section className='min-h-screen'>
-      <div>
-
+    <section className='min-h-screen px-40 pt-20'>
+      <div className='flex justify-between gap-10'>
+        <div className='flex-col justify-between items'>
+          <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
+            <div className='rounded-full bg-primary-0 py-4 px-4 shadow-xl w-[80px] h-[80px]'>
+              <span className='text-white text-[28px] p-4'>1</span>
+            </div>
+            <div className='flex-col px-4'>
+              <h1 className='text-[28px] font-medium'>Create account</h1>
+              <p><Link to="/signup" className='font-medium text-[#207783]'>Sign up</Link> first to get interact and personalize the experience.</p>
+            </div>
+          </div>
+          <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
+            <div className='rounded-full bg-primary-0 py-4 px-4 shadow-xl w-[80px] h-[80px]'>
+              <span className='text-white text-[28px] p-4'>2</span>
+            </div>
+            <div className='flex-col px-4'>
+              <h1 className='text-[28px] font-medium'>Diagnostic</h1>
+              <p>Upload a photo of your skin condition and identify it</p>
+            </div>
+          </div>
+          <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
+            <div className='rounded-full bg-primary-0 py-4 px-4 shadow-xl w-[80px] h-[80px]'>
+              <span className='text-white text-[28px] p-4'>3</span>
+            </div>
+            <div className='flex-col px-4'>
+              <h1 className='text-[28px] font-medium'>Overview result</h1>
+              <p>Summary of diagnostic result and provide treatment recommendation </p>
+            </div>
+          </div>
+        </div>
+        <div className='flex items-center'>
+          <img src={ImageDiagnostic} alt='skin-diagnostic'/>
+        </div>
       </div>
     </section>
     </>
