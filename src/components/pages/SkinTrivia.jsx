@@ -24,7 +24,7 @@ const SkinTrivia = () => {
     return (
     <>
     {/*Definition */}
-    <section className='min-h-[50vh] px-40 pt-40'>
+    <section className='min-h-[50vh] px-40 pt-40 font-poppins'>
         <div className='flex-col justify-center'>
             <h1 className='text-center text-[50px] font-bold pb-10'>Skin Trivia</h1>
             <div className='items-center flex justify-center'>
@@ -36,11 +36,8 @@ const SkinTrivia = () => {
     </section>
 
     {/*Fun Facts */}
-    <section className='min-h-screen  px-40 pt-40'>
-        <h1 className='text-center text-[50px] font-medium'>Skin Diseases</h1>
-        <div className='flex justify-center'>
-            <Link to='/skin-trivia/input-informatons' className='text-[24px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link>
-        </div>
+    <section className='min-h-screen  px-40 pt-40 font-merriweather'>
+        <h1 className='text-center text-[50px] font-medium font-poppins'>Skin Diseases</h1>
         <div className='pt-10 flex flex-col justify-center gap-4'>
             <div className='text-white flex justify-center gap-20'>
                 <button onClick={()=>handleTrivia(1)} className='bg-primary-0 px-10 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
@@ -70,6 +67,9 @@ const SkinTrivia = () => {
                 <h1 className='text-center p-4'>Atopic Dermatitis "Card V3"</h1>
             </div> */}
         </div>
+        <div className='flex justify-center pt-8'>
+            <Link to='/skin-trivia/input-informatons' className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link>
+        </div>
         <div className='py-10'>
             <div className='bg-primary-0 p-8 text-white shadow-2xl min-h-[500px]'>
                 <div className=''>
@@ -78,7 +78,7 @@ const SkinTrivia = () => {
                         <h1 className='text-[30px] font-medium pb-8'>Atopic Dermatitis</h1>
                         <div className='flex gap-10'>
                             <img src={AtopicDermatitis} alt='atopic-dermatitis' className='border-white border-2 border-solid w-1/2'/>
-                            <div>
+                            <div className='flex-col gap-4 flex'>
                                 <div className='flex gap-1'>
                                     <div>-</div>
                                     <div>Nama lain : Eksim atopik atau eksim kering</div>
