@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import ImageDiagnostic from "../assets/img/image-landing-page.png"
+import ImageDiagnostic1 from "../assets/img/sign-up.png"
+import ImageDiagnostic2 from "../assets/img/image-landing-page.png"
+import ImageDiagnostic3 from "../assets/img/overview-result.png"
 
 const LandingPage = () => {
+  const [stateButton, setStateButton] = useState({
+    default: true,
+    one: false,
+    two: false,
+    three: false,
+  });
+  
+  const handleButton = (number) => {
+    if(number===1){
+      setStateButton({default:false,one:true,two:false,three:false})
+    }
+    else if(number===2){
+      setStateButton({default:false,one:false,two:true,three:false})
+    }
+    else if(number===3){
+      setStateButton({default:false,one:false,two:false,three:true})
+    }
+    else return
+  }
+  
+
   return (
     <>
     {/*SkinFirst */}
@@ -45,39 +68,42 @@ const LandingPage = () => {
     </div>
 
     {/* */}
-    <section className='min-h-screen px-40 pt-20'>
-      <div className='flex justify-between gap-10'>
-        <div className='flex-col justify-between items'>
-          <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
-            <div className='rounded-full bg-primary-0 py-4 px-4 shadow-xl w-[80px] h-[80px]'>
+    <section className='min-h-screen px-40 flex items-center'>
+      <div className='flex justify-end gap-10'>
+        <div className='flex-col justify-start'>
+          <div className='border-b-2 border-primary-3 py-8 flex items-center'>
+            <button onClick={()=>handleButton(1)} className='rounded-full bg-primary-0 py-4 px-4 shadow-2xl w-[80px] h-[80px] hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
               <span className='text-white text-[28px] p-4'>1</span>
-            </div>
+            </button>
             <div className='flex-col px-4'>
               <h1 className='text-[28px] font-medium'>Create account</h1>
-              <p><Link to="/signup" className='font-medium text-[#207783]'>Sign up</Link> first to get interact and personalize the experience.</p>
+              <p><Link to="/signup" className='font-medium text-[#207783] hover:underline'>Sign up</Link> first to get interact and personalize the experience.</p>
             </div>
           </div>
           <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
-            <div className='rounded-full bg-primary-0 py-4 px-4 shadow-xl w-[80px] h-[80px]'>
+            <button onClick={()=>handleButton(2)} className='rounded-full bg-primary-0 py-4 px-4 shadow-2xl w-[80px] h-[80px] hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
               <span className='text-white text-[28px] p-4'>2</span>
-            </div>
+            </button>
             <div className='flex-col px-4'>
               <h1 className='text-[28px] font-medium'>Diagnostic</h1>
               <p>Upload a photo of your skin condition and identify it</p>
             </div>
           </div>
           <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
-            <div className='rounded-full bg-primary-0 py-4 px-4 shadow-xl w-[80px] h-[80px]'>
+            <button onClick={()=>handleButton(3)} className='rounded-full bg-primary-0 py-4 px-4 shadow-2xl w-[80px] h-[80px] hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
               <span className='text-white text-[28px] p-4'>3</span>
-            </div>
+            </button>
             <div className='flex-col px-4'>
               <h1 className='text-[28px] font-medium'>Overview result</h1>
               <p>Summary of diagnostic result and provide treatment recommendation </p>
             </div>
           </div>
         </div>
-        <div className='flex items-center'>
-          <img src={ImageDiagnostic} alt='skin-diagnostic'/>
+        <div className='flex items-center justify-end'>
+        {stateButton.default ? <img src={ImageDiagnostic1} className='' alt='skin-diagnostic1'/> : null}
+          {stateButton.one ? <img src={ImageDiagnostic1} className='' alt='skin-diagnostic1'/> : null}
+          {stateButton.two ? <img src={ImageDiagnostic2} className='' alt='skin-diagnostic2'/> : null}
+          {stateButton.three ? <img src={ImageDiagnostic3} alt='skin-diagnostic3'/> : null}
         </div>
       </div>
     </section>
