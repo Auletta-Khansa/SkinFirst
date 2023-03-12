@@ -77,7 +77,7 @@ const LandingPage = () => {
             </button>
             <div className='flex-col px-4'>
               <h1 className='text-[28px] font-medium'>Create account</h1>
-              <p><Link to="/signup" className='font-medium text-[#207783] hover:underline'>Sign up</Link> first to get interact and personalize the experience.</p>
+              <p><Link to="/signup" className='font-medium text-[#207783] hover:underline'>Sign up</Link> first to get interact and personalize the experience</p>
             </div>
           </div>
           <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
