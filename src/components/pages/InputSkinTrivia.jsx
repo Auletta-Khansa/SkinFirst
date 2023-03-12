@@ -3,21 +3,21 @@ import React from 'react'
 const InputSkinTrivia = () => {
   return (
     <>
-        <div className='min-h-screen px-40 py-40 '>
-            <h1 className='text-[36px] font-bold text-center pb-10'>List a New Skin Trivia Information</h1>
+        <div className='min-h-screen px-40 py-40 font-merriweather'>
+            <h1 className='text-[36px] font-bold text-center pb-10 font-poppins'>List a New Skin Trivia Information</h1>
             <div className='flex justify-center'>
                 <div className='bg-[#00695B] p-8 w-1/2 shadow-2xl rounded-xl'>
                     <div className='flex-col flex text-white pb-8'>
-                        <label className='text-medium text-[28px]' >Image</label>
+                        <label className='text-medium text-[24px]' >Image</label>
                         <img src='contoh' alt='img-uploaded' className='bg-white text-black p-4 h-[300px]'/>
                         <input type="file" className='bg-white text-black p-4' />
                     </div>
                     <div className='flex-col flex text-white pb-8'>
-                        <label className='text-medium text-[28px]' >Name</label>
+                        <label className='text-medium text-[24px]' >Name</label>
                         <input type="text" className='bg-white text-black px-4 py-2' />
                     </div>
                     <div className='flex-col flex text-white pb-8'>
-                        <label className='text-medium text-[28px]' >Description</label>
+                        <label className='text-medium text-[24px]' >Description</label>
                         <input type="text" className='bg-white text-black px-4 py-2' />
                     </div>
                     <div className='flex justify-end gap-4 font-medium '>

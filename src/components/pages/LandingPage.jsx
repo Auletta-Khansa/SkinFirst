@@ -31,9 +31,9 @@ const LandingPage = () => {
     <>
     {/*SkinFirst */}
     <div className='min-h-screen px-40 '>
-        <div className='flex'>
+        <div className='flex font-poppins'>
             <div className='pt-52 relative z-10'>
-                <h1 className='text-[120px] font-medium'>SkinFirst</h1>
+                <h1 className='text-[120px] font-semibold'>SkinFirst</h1>
                 <h2 className='text-[37px] w-3/4 font-medium pb-4'>Nourish your skin, aware your skin health with SkinFirst.</h2>
                 <a href='#features' className='bg-[#F0EFE1] hover:bg-[#c6c4a9] text-[#00695B] font-medium duration-200 hover:text-[#679a94] px-20 py-4 text-[28px] rounded-full'>Get started</a>
             </div>
@@ -47,28 +47,28 @@ const LandingPage = () => {
     </div>
 
     {/*Features */}
-    <div id="features" className='min-h-screen bg-[#F0EFE1] px-40 z-10 relative'>
+    <div id="features" className='min-h-screen bg-[#F0EFE1] px-40 z-10 relative font-merriweather'>
       <div className='px-40 pt-20 flex justify-center'>
-        <h1 className='text-[50px] font-bold'>Features</h1>
+        <h1 className='text-[50px] font-bold font-poppins'>Features</h1>
       </div>
-      <div className='flex justify-between gap-x-20 pt-20  '>
-        <div className='bg-[#013B31] px-10 py-4 text-white rounded-xl shadow-xl w-[50%] pb-20'>
-          <h1 className='text-center text-[24px] font-medium pb-8'>Fast Diagnostic</h1>
+      <div className='flex justify-between gap-x-16 pt-20  '>
+        <div className='bg-[#013B31] px-10 py-4 text-white rounded-xl shadow-xl w-[50%] pb-6'>
+          <h1 className='text-center text-[22px] font-semibold pb-8'>Fast Diagnostic</h1>
           <p className='text-center'>While fast results are important, accuracy is also crucial in making an accurate diagnosis and explore the tradeoffs between speed and accuracy and highlight.</p>
         </div>
-        <div className='bg-[#013B31] px-10 py-4 text-white rounded-xl shadow-xl w-[50%] pb-20'>
-          <h1 className='text-center text-[24px] font-medium pb-8'>Skin Trivia</h1>
+        <div className='bg-[#013B31] px-10 py-4 text-white rounded-xl shadow-xl w-[50%] pb-6'>
+          <h1 className='text-center text-[22px] font-semibold pb-8'>Skin Trivia</h1>
           <p className='text-center'>Various interesting and fun facts related to skin, skin care tips, skin conditions, and more</p>
         </div>
-        <div className='bg-[#013B31] px-10 py-4 text-white rounded-xl shadow-xl w-[50%] pb-20'>
-          <h1 className='text-center text-[24px] font-medium pb-8'>Overview Result</h1>
+        <div className='bg-[#013B31] px-10 py-4 text-white rounded-xl shadow-xl w-[50%] pb-6'>
+          <h1 className='text-center text-[22px] font-semibold pb-8'>Overview Result</h1>
           <p className='text-center'>Based on the user's diagnostic results, the tool could provide personalized tips and recommendations for skin care and treatment.</p>
         </div>
       </div>
     </div>
 
     {/* */}
-    <section className='min-h-screen px-40 flex items-center'>
+    <section className='min-h-screen px-40 flex items-center font-merriweather'>
       <div className='flex justify-end gap-10'>
         <div className='flex-col justify-start'>
           <div className='border-b-2 border-primary-3 py-8 flex items-center'>
@@ -76,8 +76,8 @@ const LandingPage = () => {
               <span className='text-white text-[28px] p-4'>1</span>
             </button>
             <div className='flex-col px-4'>
-              <h1 className='text-[28px] font-medium'>Create account</h1>
-              <p><Link to="/signup" className='font-medium text-[#207783] hover:underline'>Sign up</Link> first to get interact and personalize the experience</p>
+              <h1 className='text-[28px] font-semibold'>Create account</h1>
+              <p><Link to="/signup" className='font-semibold text-[#207783] hover:underline'>Sign up</Link> first to get interact and personalize the experience</p>
             </div>
           </div>
           <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
@@ -85,7 +85,7 @@ const LandingPage = () => {
               <span className='text-white text-[28px] p-4'>2</span>
             </button>
             <div className='flex-col px-4'>
-              <h1 className='text-[28px] font-medium'>Diagnostic</h1>
+              <h1 className='text-[28px] font-semibold'>Diagnostic</h1>
               <p>Upload a photo of your skin condition and identify it</p>
             </div>
           </div>
@@ -94,7 +94,7 @@ const LandingPage = () => {
               <span className='text-white text-[28px] p-4'>3</span>
             </button>
             <div className='flex-col px-4'>
-              <h1 className='text-[28px] font-medium'>Overview result</h1>
+              <h1 className='text-[28px] font-semibold'>Overview result</h1>
               <p>Summary of diagnostic result and provide treatment recommendation </p>
             </div>
           </div>
