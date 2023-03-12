@@ -21,6 +21,15 @@ module.exports = {
       ],
       'sans': [
           'Inter', 
+      ],
+      poppins : [
+        'Poppins'
+      ],
+      playfair : [
+        'Playfair Display'
+      ],
+      merriweather : [
+        'Merriweather'
       ]
     }
   },
