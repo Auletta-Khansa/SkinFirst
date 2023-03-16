@@ -6,6 +6,8 @@ import InputSkinTrivia from "./components/pages/InputSkinTrivia";
 import Diagnostic from "./components/pages/Diagnostic";
 import LoginPage from "./components/pages/LoginPage";
 import SignUpPage from "./components/pages/SignUpPage";
+import ProfilePage from "./components/pages/ProfilePage";
+import NotFound from "./components/pages/NotFound";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -23,6 +25,8 @@ function App() {
           <Route path="/diagnostic" element={<Diagnostic/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/signup" element={<SignUpPage/>}/>
+          <Route path="/profile" element={<ProfilePage/>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
