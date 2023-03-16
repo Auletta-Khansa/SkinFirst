@@ -10,6 +10,7 @@ module.exports = {
     "./src/components/pages/LoginPage.jsx",
     "./src/components/pages/SignUpPage.jsx",
     "./src/components/pages/NotFound.jsx",
+    "./src/components/pages/ProfilePage.jsx",
   ],
   theme: {
     extend: {
