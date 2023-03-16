@@ -11,6 +11,8 @@ module.exports = {
     "./src/components/pages/SignUpPage.jsx",
     "./src/components/pages/NotFound.jsx",
     "./src/components/pages/ProfilePage.jsx",
+    "./src/components/pages/InputPenyakitPage.jsx",
+    "./src/components/pages/HistoryPage.jsx",
   ],
   theme: {
     extend: {
