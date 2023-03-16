@@ -8,6 +8,8 @@ module.exports = {
     "./src/components/pages/Diagnostic.jsx",
     "./src/components/Footer.jsx",
     "./src/components/pages/LoginPage.jsx",
+    "./src/components/pages/SignUpPage.jsx",
+    "./src/components/pages/NotFound.jsx",
   ],
   theme: {
     extend: {
