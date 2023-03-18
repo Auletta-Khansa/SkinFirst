@@ -8,7 +8,7 @@ const Diagnostic = () => {
           Skin Diseases Diagnosis
         </h1>
         <div className="pt-10 flex justify-between gap-8">
-          <div className=" bg-[#013B31] w-1/3 px-8 pb-6 text-[20px] shadow-xl rounded-xl">
+          <div className=" bg-[#013B31] w-1/3 h-full px-8 pb-6 text-[20px] shadow-xl rounded-xl">
             <h1 className="text-primary-3 text-xl font-bold  py-4 md:text-2xl leading-tight tracking-tight ">
               Upload Image
             </h1>
@@ -17,7 +17,7 @@ const Diagnostic = () => {
                 for="dropzone-file"
                 class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
               >
-                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <div class="flex flex-col items-center justify-center px-6">
                   <svg
                     aria-hidden="true"
                     class="w-10 h-10 mb-3 text-gray-400"
@@ -44,10 +44,10 @@ const Diagnostic = () => {
                 <input id="dropzone-file" type="file" class="hidden" />
               </label>
             </div>
-            <div class="flex w-full justify-center pt-4 px-4">
+            <div class="flex w-full justify-center pt-4">
               <button
                 type="submit"
-                class="w-1/3 h-1/6 text-primary-0 bg-primary-1 hover:bg-primary-3 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm  py-2.5 text-center"
+                class="w-full text-primary-0 bg-primary-1 hover:bg-primary-3 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm  py-2.5 text-center"
                 fdprocessedid="gkbxyo"
               >
                 Diagnose
