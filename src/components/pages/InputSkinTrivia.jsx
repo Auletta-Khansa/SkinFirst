@@ -6,7 +6,7 @@ const InputSkinTrivia = () => {
         <div className='min-h-screen px-40 py-40 font-merriweather'>
             <h1 className='text-[36px] font-bold text-center pb-10 font-poppins'>List a New Skin Trivia Information</h1>
             <div className='flex justify-center'>
-                <div className='bg-[#00695B] p-8 w-1/2 shadow-2xl rounded-xl'>
+                <div className='bg-primary-0 p-8 w-1/2 shadow-2xl rounded-xl'>
                     <div className='flex-col flex text-white pb-8'>
                         <label className='text-medium text-[24px]' >Image</label>
                         <img src='contoh' alt='img-uploaded' className='bg-white text-black p-4 h-[300px]'/>
