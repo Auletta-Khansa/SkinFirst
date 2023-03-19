@@ -1,6 +1,6 @@
 import React from "react";
 import {FaUserCircle} from "react-icons/fa"
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const ProfilePage = () => {
     return (
@@ -18,7 +18,7 @@ const ProfilePage = () => {
                             </div>
                         </div>
                         <div class="">
-                            <button class="bg-primary-1 text-primary-0 font-bold py-2 px-10 rounded duration-300 hover:bg-[#a4a399] ">Medical History</button>
+                            <Link to="/history" class="bg-primary-1 text-primary-0 font-bold py-2 px-10 rounded duration-300 hover:bg-[#a4a399] ">Medical History</Link>
                         </div>
                     </div>
                 </div>
