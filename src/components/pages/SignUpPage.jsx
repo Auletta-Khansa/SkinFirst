@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 const SignUpPage = () => {
     return (
       <>
-        <section class="min-h-[50vh] px-30 pt-40 pb-20 bg-gray-50">
-            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <section class="min-h-[50vh] px-30 pt-20 pb-20 bg-gray-50">
+            <div class="flex flex-col items-center justify-center px-6 py-10 mx-auto">
                 <a href="#home" class="flex items-center mb-6 text-3xl font-bold text-primary-0 ">
                 {/* <img class="w-8 h-8 mr-2" rrrsrc={ImgLogo} alt="img-logo"> </img> */}
                 Sign Up    
@@ -47,7 +47,7 @@ const SignUpPage = () => {
                             </div> */}
                             <button type="submit" class="w-full text-primary-0 bg-primary-1 hover:bg-primary-3 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center">Sign Up</button>
                             <p class="text-sm font-medium text-primary-1 ">
-                                Already have an account? <Link to='/login'><a href="#home" class="font-medium text-primary-4 underline">Login here</a></Link>
+                                Already have an account? <Link to='/login'><a href="#home" class="font-medium text-primary-4 underline hover:text-primary-2">Login here</a></Link>
                             </p>
                         </form>
                     </div>

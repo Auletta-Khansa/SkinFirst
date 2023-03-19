@@ -4,7 +4,7 @@ const Diagnostic = () => {
     <>
       {/*Fun Facts */}
       <section className="min-h-screen  px-40 pt-32 pb-20 bg-[#FFFFFFF]">
-        <h1 className="text-center text-[50px] font-medium">
+        <h1 className="text-center text-[50px] font-poppins font-bold">
           Skin Diseases Diagnosis
         </h1>
         <div className="pt-10 flex justify-between gap-8">
@@ -68,12 +68,12 @@ const Diagnostic = () => {
               </div>
             </div>
             <div className="px-4 py-6">
-              <div className=" px-4 py-16 bg-primary-1 rounded-lg border ">
+              <div className=" px-4 py-1 min-h-[200px] bg-primary-1 rounded-lg border ">
                 <span className="text-teal-900"></span>
               </div>
             </div>
             <div className="px-4 ">
-              <div className=" px-4 py-16 bg-primary-1 rounded-lg border ">
+              <div className=" px-4 py-1 min-h-[200px] bg-primary-1 rounded-lg border ">
                 <span className="text-teal-900"></span>
               </div>
             </div>
