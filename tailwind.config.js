@@ -13,6 +13,7 @@ module.exports = {
     "./src/components/pages/ProfilePage.jsx",
     "./src/components/pages/InputPenyakitPage.jsx",
     "./src/components/pages/HistoryPage.jsx",
+    "./src/components/pages/UserList.jsx",
   ],
   theme: {
     extend: {

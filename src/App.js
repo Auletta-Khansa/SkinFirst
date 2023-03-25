@@ -10,6 +10,7 @@ import ProfilePage from "./components/pages/ProfilePage";
 import InputPenyakitPage from "./components/pages/InputPenyakitPage";
 import HistoryPage from "./components/pages/HistoryPage";
 import NotFound from "./components/pages/NotFound";
+import UserList from "./components/pages/UserList";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -21,6 +22,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/home" element={<LandingPage/>}/>
+          <Route path="/users" element={<UserList/>}/>
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/skin-trivia" element={<SkinTrivia/>}/>
           <Route path="/skin-trivia/input-informatons" element={<InputSkinTrivia/>}/>
