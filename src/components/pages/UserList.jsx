@@ -71,7 +71,15 @@ const UserList = () => {
                             <td className='border-gray-900 border-2 px-4'>{index+1}</td>
                             <td className='border-gray-900 border-2 px-8'>{trivia.image}</td>
                             <td className='border-gray-900 border-2  px-8'>{trivia.name}</td>
-                            <td className='border-gray-900 border-2  px-8'>{trivia.description}</td>
+                            <td className='border-gray-900 border-2  px-8 w-[200%]'>
+                                <div>
+                                    {trivia.description.map((description)=>{
+                                        return(
+                                            <p>- {description}</p>
+                                        )
+                                    })}
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 )

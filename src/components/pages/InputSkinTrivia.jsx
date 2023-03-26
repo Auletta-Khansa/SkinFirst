@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const InputSkinTrivia = () => {
     const [image, setImage] = useState("")
     const [name, setName] = useState("")
-    const [description, setDescription] = useState("")
+    const [description, setDescription] = useState([""])
     const navigate = useNavigate();
 
     let projectID = process.env.REACT_APP_INFURA_PROJECT_ID;
@@ -28,21 +28,23 @@ const InputSkinTrivia = () => {
         }
     })
 
-    const [descriptionField, setDescriptionField] = useState([{id:1,no:1}])
-    //let fieldLength = 0
-    let _field = 0
-    let fields = []
+    const handleInputChange = (index, event) => {
+        const values = [...description];
+        values[index] = event.target.value;
+        setDescription(values);
+      };
 
-    const addDescriptionField = () =>{
-        console.log("before",_field)
-        // console.log("before ",descriptionField)
-        _field+=1
-        fields.push({
-            number:_field})
-        console.log(fields)
-        setDescriptionField(fields)
-        console.log("after ", descriptionField[0])
-    }
+    const handleAddInput = () => {
+        const values = [...description];
+        values.push("");
+        setDescription(values);
+    };
+
+    const handleRemoveInput = (index) => {
+        const values = [...description];
+        values.splice(index, 1);
+        setDescription(values);
+      };
 
     const uploadToIPFS = async(e) => {
         e.preventDefault();
@@ -74,24 +76,6 @@ const InputSkinTrivia = () => {
             console.log(error)
         }
     }
-    
-    // const fileInput = document.getElementById("file-input");
-    // const previewImage = document.getElementById("preview-image");
-
-    // fileInput.addEventListener("change", function() {
-    //     const file = this.files[0];
-
-    //     if (file) {
-    //     const reader = new FileReader();
-
-    //     reader.addEventListener("load", function() {
-    //         previewImage.src = reader.result;
-    //         previewImage.classList.remove("hidden");
-    //     });
-
-    //     reader.readAsDataURL(file);
-    //     }
-    // });
 
   return (
     <>
@@ -99,49 +83,67 @@ const InputSkinTrivia = () => {
             <h1 className='text-[36px] font-bold text-center pb-10 font-poppins'>List a New Skin Trivia Information</h1>
             <div className='flex justify-center'>
                 <form onSubmit={inputTrivia} className='bg-primary-0 p-8 w-1/2 shadow-2xl rounded-xl'>
+                    {/* IMAGE */}
                     <div className='flex-col flex text-white pb-8'>
                         <h2 className='text-medium text-[24px]'>Image</h2>
                         <div class="relative w-64 h-64 border-2 border-dashed border-gray-300 bg-white rounded-lg">
-                        <input type="file" id="file-input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onChange={uploadToIPFS}/>
-                        <label for="file-input" class="z-absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center items-center text-gray-500 text-lg">
-                        {image ? (
-                            <img
-                                src={image}
-                                alt="Preview"
-                                className="object-cover w-[500px] h-full absolute inset-0 rounded-lg p-4"
-                            />
-                            ) : (
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                                <span class="font-semibold">Click to upload</span> or drag and drop
-                            </p>
-                            )}
-                        </label>
+                            <input type="file" id="file-input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onChange={uploadToIPFS}/>
+                            <label for="file-input" class="z-absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center items-center text-gray-500 text-lg">
+                            {image ? (
+                                <img
+                                    src={image}
+                                    alt="Preview"
+                                    className="object-cover w-[500px] h-full absolute inset-0 rounded-lg p-4"
+                                />
+                                ) : (
+                                <div className=' h-full items-center gap-1 flex justify-center'>
+                                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400 px-10">
+                                        <span class="font-semibold">Click to upload</span> or drag and drop
+                                    </p>
+                                </div>
+                                )}
+                            </label>
+                        </div>
                     </div>
-                    </div>
+
+                    {/* NAME */}
                     <div className='flex-col flex text-white pb-8'>
                         <label className='text-medium text-[24px]' >Name</label>
                         <input type="text" className='bg-white text-black px-4 py-2' onChange={(e)=>setName(e.target.value)}/>
                     </div>
+
+                    {/* DESCRIPTION */}
                     <div className='flex-col flex text-white pb-2'>
                         <label className='text-medium text-[24px]' >Description</label>
-                        {/* STRING */}
-                        <div className='flex justify-between gap-1 items-center bg-white p-1'>
-                            <input type="text" className='bg-white text-black px-4 py-2 w-full' placeholder={"Description "} onChange={(e)=>setDescription(e.target.value)}/>
-                            <button className='h-full text-[40px] text-red-600 hover:text-red-800'><FaRegWindowClose/></button>
-                        </div>
-
-                        {/* ARRAY */}
-                        {/* {descriptionField.map((field,index) =>(
-                            <div key={index} className='flex justify-between gap-1 items-center bg-white p-1'>
-                                <input type="text" className='bg-white text-black px-4 py-2 w-full' placeholder={"Description "+field.number} />
-                                <button className='h-full text-[40px] text-red-600 hover:text-red-800'><FaRegWindowClose/></button>
+                        {description.map((input, index) => (
+                            <div key={index} className="flex items-center mt-4 justify-start ">
+                                <label htmlFor={`description-${index}`} className="pr-6 w-[60%]">
+                                    Description {index + 1}:
+                                </label>
+                                <input
+                                    id={`description-${index}`}
+                                    type="text"
+                                    value={input}
+                                    onChange={(event) => handleInputChange(index, event)}
+                                    className="border border-gray-300 w-full rounded px-4 py-2 mr-4 text-black"
+                                />
+                                {description.length > 1 && (
+                                    <button
+                                    onClick={() => handleRemoveInput(index)}
+                                    className="bg-red-500 text-white rounded px-0.5 text-[30px]"
+                                    >
+                                    <FaRegWindowClose/>
+                                    </button>
+                                )}
                             </div>
-                        ))} */}
+                        ))}
+                        <button onClick={handleAddInput} className="bg-primary-2 hover:bg-primary-3 hover:text-primary-2 duration-200 active:bg-primary-2 active:text-white text-white rounded px-4 py-2 mt-4">
+                            + Add more description
+                        </button>
                     </div>
-                    <div className='pb-8'>
-                        <button className='bg-primary-1 text-primary-2 hover:bg-primary-3 font-semibold px-4 py-2 rounded-xl' onClick={()=>addDescriptionField()}>+ Add description</button>
-                    </div>
-                    <div className='flex justify-end gap-4 font-medium '>
+
+                    {/* SUBMIT */}
+                    <div className='flex justify-end gap-4 font-medium mt-20'>
                         <button className='bg-[#ef4d4d]  rounded-lg px-10 py-2 shadow-xl hover:bg-[#cf2b2b] duration-200 text-white'>Reset</button>
                         <button className='bg-[#F0EFE1]  rounded-lg px-10 py-2 shadow-xl hover:bg-[#c8c7bb] duration-200' type='submit'>Submit</button>
                     </div>
