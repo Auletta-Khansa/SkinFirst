@@ -67,8 +67,9 @@ const SkinTrivia = () => {
                 <h1 className='text-center p-4'>Atopic Dermatitis "Card V3"</h1>
             </div> */}
         </div>
-        <div className='flex justify-center pt-8'>
+        <div className='flex flex-col items-center justify-center pt-8'>
             <Link to='/skin-trivia/input-informatons' className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link>
+            <Link to='/users'  className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Lihat database</Link>
         </div>
         <div className='py-10'>
             <div className='bg-primary-0 p-8 text-white shadow-2xl min-h-[500px]'>
