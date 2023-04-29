@@ -72,8 +72,8 @@ const LandingPage = () => {
       <div className='flex 2xl:flex-row xl:flex-row lg:flex-row flex-col-reverse justify-end gap-10'>
         <div className='flex-col justify-start'>
           <div className='border-b-2 border-primary-3 py-8 flex items-center'>
-            <button onClick={()=>handleButton(1)} className='rounded-full bg-primary-0 py-4 px-4 shadow-2xl w-[60px] 2xl:w-[80px] xl:w-[80px] lg:w-[80px] h-[60px] 2xl:h-[80px] xl:h-[80px] lg:h-[80px] hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
-              <span className='text-white text-[18px] p-4'>1</span>
+            <button onClick={()=>handleButton(1)} className='rounded-full bg-primary-0 py-4 px-6 shadow-2xl hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
+              <span className='text-white 2xl:text-[28px] text-[20px]'>1</span>
             </button>
             <div className='flex-col px-4'>
               <h1 className='text-[24px] 2xl:text-[28px] xl:text-[28px] lg:text-[28px] font-semibold'>Create account</h1>
@@ -81,17 +81,17 @@ const LandingPage = () => {
             </div>
           </div>
           <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
-            <button onClick={()=>handleButton(2)} className='rounded-full bg-primary-0 py-4 px-4 shadow-2xl w-[80px] h-[80px] hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
-              <span className='text-white text-[28px] p-4'>2</span>
+            <button onClick={()=>handleButton(2)} className='rounded-full bg-primary-0 py-4 px-6 shadow-2xl  hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
+              <span className='text-white 2xl:text-[28px] text-[20px]'>2</span>
             </button>
             <div className='flex-col px-4'>
               <h1 className='text-[28px] font-semibold'>Diagnostic</h1>
               <p>Upload a photo of your skin condition and identify it</p>
             </div>
           </div>
-          <div className=' border-b-2 border-primary-3 py-8 flex items-center'>
-            <button onClick={()=>handleButton(3)} className='rounded-full bg-primary-0 py-4 px-4 shadow-2xl w-[80px] h-[80px] hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
-              <span className='text-white text-[28px] p-4'>3</span>
+          <div className=' border-b-2 border-primary-3 py-8 mb-10 flex items-center'>
+            <button onClick={()=>handleButton(3)} className='rounded-full bg-primary-0 py-4 px-6 shadow-2xl hover:bg-primary-2 cursor-pointer select-none duration-200 ring-1 ring-slate-900/5 focus:bg-primary-2 active:bg-primary-4'>
+              <span className='text-white 2xl:text-[28px] text-[20px] '>3</span>
             </button>
             <div className='flex-col px-4'>
               <h1 className='text-[28px] font-semibold'>Overview result</h1>
