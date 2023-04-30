@@ -18,23 +18,22 @@ const Navbar = () => {
               <div className='2xl:hidden xl:hidden lg:hidden md:hidden flex'>
                 <FaBars onClick={toggle}/>
                 {/* MOBILE SIDEBAR */}
-                <div style={{width: isOpen ? "100vw" : "0"}} className='bg-black z-10 w-[500px] h-screen fixed top-0 left-0 bg-opacity-50' onClick={toggle}>
-                  <div style={{width: isOpen ? "200px" : "0px"}} className=" z-50 bg-primary-3 border-l-2 border-black shadow-lg shadow-black text-white fixed h-[120vh] w-[300px] top-0 right-0 transition-all flex justify-between">
-                    <div className="flex items-start py-6 px-4">  
-                        <ul className='flex flex-col justify-start gap-10  text-[#011A16]'>
-                          <li className='flex items-center gap-1'><FaHome/><Link to='/home' className='hover:text-[#011a1671]'>Home</Link></li>
-                          <li className='flex items-center gap-1'><FaSwatchbook/><Link to='/skin-trivia' className='hover:text-[#011a1671]'>Skin Trivia</Link></li>
-                          <li className='flex items-center gap-1'><FaDiagnoses/><Link to='/diagnostic' className='hover:text-[#011a1671]'>Diagnostic</Link></li>
-                          <li className='flex items-center gap-1'><FaUser/><Link to='/profile' className='hover:text-[#011a1671]'>Profile</Link></li>
-                          <li><Link to='/login' className='bg-[#F0EFE1] hover:bg-[#c6c4a9] shadow-lg duration-200 px-10 py-2 rounded-xl'><span className='text-[#00695B]'>Login</span></Link></li>
-                        </ul>
+                <div style={{width: isOpen ? "100vw" : "0px"}} className='bg-black z-40 w-[500px] h-screen fixed top-0 left-0 bg-opacity-50 ' onClick={toggle}></div>
+                <div style={{width: isOpen ? "250px" : "0px"}} className=" bg-primary-3 z-50 border-l-2 border-black shadow-lg shadow-black text-white fixed h-[120vh] w-[300px] top-0 right-0 transition-all ">
+                    <div className="flex justify-between items-start py-6 px-10">  
+                      <ul className='flex flex-col justify-start gap-10  text-[#011A16]'>
+                        <li className='flex items-center gap-1'><FaHome/><Link to='/home' className='hover:text-[#011a1671]'>Home</Link></li>
+                        <li className='flex items-center gap-1'><FaSwatchbook/><Link to='/skin-trivia' className='hover:text-[#011a1671]'>Skin Trivia</Link></li>
+                        <li className='flex items-center gap-1'><FaDiagnoses/><Link to='/diagnostic' className='hover:text-[#011a1671]'>Diagnostic</Link></li>
+                        <li className='flex items-center gap-1'><FaUser/><Link to='/profile' className='hover:text-[#011a1671]'>Profile</Link></li>
+                        <li><Link to='/login' className='bg-[#F0EFE1] hover:bg-[#c6c4a9] shadow-lg duration-200 px-10 py-2 rounded-xl'><span className='text-[#00695B]'>Login</span></Link></li>
+                      </ul>
+                      <div className=" text-black">
+                        <FaBars onClick={toggle}/>
+                      </div>  
                     </div>
-                    <div className=" text-black py-6 px-4">
-                      <FaBars onClick={toggle}/>
-                    </div>  
-                </div>
-              </div>
-              {/* /MOBILE SIDEBAR */}
+                  </div>
+                {/* /MOBILE SIDEBAR */}
               </div>
               <div className='2xl:flex xl:flex lg:flex md:flex justify-end gap-10 text-[15px] hidden'>
                 <ul className='flex gap-6 px-2 py-2 text-[#011A16]'>

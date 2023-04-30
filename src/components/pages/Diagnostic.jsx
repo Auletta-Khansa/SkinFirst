@@ -2,14 +2,13 @@ import React from "react";
 const Diagnostic = () => {
   return (
     <>
-      {/*Fun Facts */}
-      <section className="min-h-screen  px-40 pt-32 pb-20 bg-[#FFFFFFF]">
-        <h1 className="text-center text-[50px] font-poppins font-bold">
+      <section className="min-h-screen 2xl:px-40 xl:px-40 lg:px-40 px-10 pt-32 pb-20 bg-[#FFFFFFF]">
+        <h1 className="text-center 2xl:text-[50px] xl:text-[50px] lg:text-[50px] md:text-[40px] text-[30px] font-poppins font-bold">
           Skin Diseases Diagnosis
         </h1>
-        <div className="pt-10 flex justify-between gap-8">
-          <div className=" bg-[#013B31] w-1/3 h-full px-8 pb-6 text-[20px] shadow-xl rounded-xl">
-            <h1 className="text-primary-3 text-xl font-bold  py-4 md:text-2xl leading-tight tracking-tight ">
+        <div className="pt-10 flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col justify-between items-center 2xl:items-start xl:items-start lg:items-start md:items-start gap-8">
+          <div className=" bg-[#013B31] 2xl:w-1/3 xl:w-1/3 lg:w-1/3 md:w-1/3 sm:w-2/3 w-full h-full px-8 pb-6 text-[20px] shadow-xl rounded-xl">
+            <h1 className="text-primary-3 2xl:text-xl xl:text-xl lg:text-xl md:text-xl text-base font-bold py-4 leading-tight tracking-tight ">
               Upload Image
             </h1>
             <div class="flex items-center justify-center w-full">
@@ -50,19 +49,20 @@ const Diagnostic = () => {
                 class="w-full text-primary-0 bg-primary-1 hover:bg-primary-3 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm  py-2.5 text-center"
                 fdprocessedid="gkbxyo"
               >
-                Diagnose
+                <a href="#diagnoseResult">Diagnose</a>
               </button>
             </div>
           </div>
 
-          <div className="bg-[#013B31] w-2/3 px-4 pb-6 text-[20px]  shadow-xl rounded-xl">
-            <h1 className="text-primary-3 text-xl font-bold px-4 py-4 md:text-2xl leading-tight tracking-tight ">
+          <div id="diagnoseResult"></div>
+          <div className="bg-[#013B31] 2xl:w-2/3 xl:w-2/3 lg:w-2/3 md:w-2/3 sm:w-2/3 w-full px-4 pb-6 text-[20px] shadow-xl rounded-xl 2xl:mt-0 xl:mt-0 lg:mt-0 md:mt-0 mt-20">
+            <h1 className="text-primary-3 2xl:text-xl xl:text-xl lg:text-xl md:text-xl text-base font-bold px-4 py-4 leading-tight tracking-tight ">
               Diagnostic Results
             </h1>
 
             <div className="px-4">
               <div className=" px-4  bg-primary-1 rounded-lg border ">
-                <span className="text-teal-900 item-center justify-center">
+                <span className="text-teal-900 item-center 2xl:text-lg xl:text-lg lg:text-lg md:text-lg text-sm justify-center">
                   Type of Disease:
                 </span>
               </div>
@@ -80,7 +80,7 @@ const Diagnostic = () => {
             <div class="flex w-full justify-end pt-4 px-4">
               <button
                 type="submit"
-                class="w-1/4 h-1/6 text-primary-0  bg-primary-3 hover:bg-primary-1 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center"
+                class=" h-1/6 text-primary-0  bg-primary-3 hover:bg-primary-1 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center"
                 fdprocessedid="gkbxyo"
               >
                 Save History

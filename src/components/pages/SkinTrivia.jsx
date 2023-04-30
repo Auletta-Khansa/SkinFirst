@@ -24,9 +24,9 @@ const SkinTrivia = () => {
     return (
     <>
     {/*Definition */}
-    <section className='min-h-[50vh] 2xl:px-40 xl:px-40 lg:px-40 px-10 pt-40 font-poppins'>
+    <section className='min-h-screen 2xl:px-40 xl:px-40 lg:px-40 px-10 pt-40 font-poppins'>
         <div className='flex-col justify-center'>
-            <h1 className='text-center text-[50px] font-bold pb-10'>Skin Trivia</h1>
+            <h1 className='text-center 2xl:text-[50px] xl:text-[50px] lg:text-[50px] md:text-[40px] text-[30px] font-bold pb-10'>Skin Trivia</h1>
             <div className='items-center flex justify-center'>
                 <img src={ImageSkinTrivia} alt='skin-trivia'/>
             </div>
@@ -36,8 +36,8 @@ const SkinTrivia = () => {
     </section>
 
     {/*Fun Facts */}
-    <section className='min-h-screen 2xl:px-40 xl:px-40 lg:px-40 px-10 pt-40 font-merriweather'>
-        <h1 className='text-center text-[50px] font-medium font-poppins'>Skin Diseases</h1>
+    <section className='min-h-screen bg-primary-1 2xl:px-40 xl:px-40 lg:px-40 px-10 pt-40 font-merriweather'>
+        <h1 className='text-center 2xl:text-[50px] xl:text-[50px] lg:text-[50px] md:text-[40px] text-[30px] font-medium font-poppins'>Skin Diseases</h1>
         <div className='pt-10 flex flex-col justify-center gap-4'>
             <div className='text-white flex justify-center 2xl:gap-20 xl:gap-20 lg:gap-20 md:gap-20 gap-3'>
                 <button onClick={()=>handleTrivia(1)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
