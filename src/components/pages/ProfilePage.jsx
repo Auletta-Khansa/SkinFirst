@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 const ProfilePage = () => {
     return (
       <>
-        <section class="min-h-screen px-30 pt-20 bg-gray-50 px-40">
-            <div class="flex justify-between gap-16">
-                <div className="py-8">
+        <section class="min-h-screen pt-20 bg-gray-50 2xl:px-40 xl:px-40 lg:px-40 px-10">
+            <div class="flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col justify-between gap-16 2xl:items-start xl:items-start lg:items-start md:items-start items-center">
+                <div className="py-8 2xl:w-[300px] xl:w-[300px] lg:w-[300px] md:w-[300px] sm:w-[300px] w-full">
                     <div class="bg-primary-0 py-10 rounded-lg px-8 flex-col justify-between flex gap-20">
                         <div>
                             <div class="flex justify-center text-primary-1 text-[200px] py-6">
@@ -23,7 +23,7 @@ const ProfilePage = () => {
                     </div>
                 </div>
 
-                <div class="w-full py-8">
+                <div class="sm:w-2/3 w-full py-8">
                     <form class="bg-primary-0 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 h-full">
                         <h1 class="text-xl font-bold leading-tight tracking-tight text-primary-3 md:text-2xl mb-4">
                             Account Profile
