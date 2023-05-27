@@ -14,10 +14,14 @@ export function UserContextProvider({children}) {
                 setUser(data)
             })
         }
+        console.log("Userrrrrrrrrr :", user)
+        // eslint-disable-next-line
     }, [])
     return(
-        <UserContext.Provider value={[user, setUser]}>
+        <UserContext.Provider value={{user, setUser}}>        
             {children}
         </UserContext.Provider>
+        
     )
+    
 }

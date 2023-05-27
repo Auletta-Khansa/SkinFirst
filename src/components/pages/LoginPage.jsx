@@ -26,7 +26,7 @@ const LoginPage = () => {
             console.log(data.error)
            }
            else{
-            // setData({});
+            setData({});
             toast.success(data.message)
             console.log(data.message)
             navigate('/home')
