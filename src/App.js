@@ -11,7 +11,7 @@ import InputPenyakitPage from "./components/pages/InputPenyakitPage";
 import HistoryPage from "./components/pages/HistoryPage";
 import NotFound from "./components/pages/NotFound";
 import UserList from "./components/pages/UserList";
-import { UserContext, UserContextProvider } from "./context/userContext";
+import { UserContextProvider } from "./context/userContext";
 
 import { Toaster } from "react-hot-toast";
 
