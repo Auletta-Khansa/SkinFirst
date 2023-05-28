@@ -1,25 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import env from 'react-dotenv'
+import axios from 'axios'
 
-import AtopicDermatitis from '../assets/img/atopic-dermatitis-neck.jpg'
+// import AtopicDermatitis from '../assets/img/atopic-dermatitis-neck.jpg'
 import ImageSkinTrivia from '../assets/img/skin-trivia.png'
 
 const SkinTrivia = () => {
-    const [showTrivia, setShowTrivia] = useState({
-        one:false,
-        two:false,
-        three:false,
-        four:false,
-        five:false,
-        six:false,
-        seven:false,
-        eight:false,
-        nine:false
-    })
+    const [showTrivia, setShowTrivia] = useState(false)
+
+    const [trivias, setTrivias] = useState([])
+    let API = env.REACT_APP_SKINFIRST_API
+
+    const getTrivias = async() =>{
+        const response = await axios.get(API+"trivias")
+        const dataTrivias = response.data
+        setTrivias(dataTrivias)
+    }    
+
+    useEffect(() => {
+      getTrivias()
+      // eslint-disable-next-line
+    }, [])
+    
 
     const handleTrivia = (number) => {
-        if(number===1) setShowTrivia({one:true,two:false,three:false,four:false,five:false,six:false,seven:false,eight:false,nine:false})
+        setShowTrivia(true)
+        setTrivias(trivias[number-1])
+        console.log(trivias)
     }
+
+    const renderImage = (imageBase64, index) => {
+        return <img src={`data:${imageBase64.contentType};base64,${imageBase64.data}`} alt={`Skin-Trivia-${index}`} className='w-[400px] h-fit'/>;
+      };
 
     return (
     <>
@@ -41,18 +54,18 @@ const SkinTrivia = () => {
         <div className='pt-10 flex flex-col justify-center gap-4'>
             <div className='text-white flex justify-center 2xl:gap-20 xl:gap-20 lg:gap-20 md:gap-20 gap-3'>
                 <button onClick={()=>handleTrivia(1)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
-                <button className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
-                <button className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
+                <button onClick={()=>handleTrivia(2)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
+                <button onClick={()=>handleTrivia(3)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
             </div>
             <div className='text-white flex justify-center 2xl:gap-20 xl:gap-20 lg:gap-20 md:gap-20 gap-3'>
-                <button className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
-                <button className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
-                <button className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
+                <button onClick={()=>handleTrivia(4)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
+                <button onClick={()=>handleTrivia(5)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
+                <button onClick={()=>handleTrivia(6)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
             </div>
             <div className='text-white flex justify-center 2xl:gap-20 xl:gap-20 lg:gap-20 md:gap-20 gap-3'>
-                <button className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
-                <button className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
-                <button className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
+                <button onClick={()=>handleTrivia(7)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
+                <button onClick={()=>handleTrivia(8)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
+                <button onClick={()=>handleTrivia(9)} className='bg-primary-0 2xl:text-[18px] xl:text-[18px] lg:text-[18px] md:text-[18px] text-[10px] 2xl:px-10 xl:px-10 lg:px-10 md:px-10 px-4 py-2 rounded-full hover:bg-primary-3 hover:text-primary-0 duration-300 focus:bg-primary-3 focus:text-primary-0 active:bg-primary-1'>Atopic Dermatitis</button>
             </div>
             {/* <div className='bg-[#013B31] w-1/3 p-4 text-[20px] text-white shadow-xl rounded-xl'>
                 <img src={AtopicDermatitis} alt='atopic-dermatitis' className='border-white border-2 border-solid'/>
@@ -74,28 +87,19 @@ const SkinTrivia = () => {
         <div className='py-10'>
             <div className='bg-primary-0 p-8 text-white shadow-2xl min-h-[500px]'>
                 <div className=''>
-                    {showTrivia.one ? (
+                    {showTrivia ? (
                     <>
-                        <h1 className='text-[30px] font-medium pb-8'>Atopic Dermatitis</h1>
+                        <h1 className='text-[30px] font-medium pb-8'>{trivias.name}</h1>
                         <div className='flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col gap-10'>
-                            <img src={AtopicDermatitis} alt='atopic-dermatitis' className='border-white border-2 border-solid 2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 w-full'/>
+                            <div className='border-white border-2 border-solid 2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 w-full'>{renderImage(trivias.image)}</div>
                             <div className='flex-col gap-4 flex'>
-                                <div className='flex gap-1'>
-                                    <div>-</div>
-                                    <div>Nama lain : Eksim atopik atau eksim kering</div>
-                                </div>
-                                <div className='flex gap-1'>
-                                    <div>-</div>
-                                    <div>Peradangan kulit atau eksim yang ditandai dengan kulit kering, gatal secara terus-menerus, dan ruam merah di kulit.</div>
-                                </div>
-                                <div className='flex gap-1'>
-                                    <div>-</div>
-                                    <div>Umumnya terjadi di wajah, lengan, dan kaki.</div>
-                                </div>
-                                <div className='flex gap-1'>
-                                    <div>-</div>
-                                    <div>Gejala : gatal dan ruam kulit</div>
-                                </div>
+                                {trivias.description.map((description)=>{
+                                    return(
+                                        <div className='flex gap-1'>
+                                            <p>- {description}</p>
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     </>):(null)}
