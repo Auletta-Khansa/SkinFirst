@@ -26,7 +26,9 @@ const UserList = () => {
     }, [])
     
     
-
+    const renderImage = (imageBase64, index) => {
+        return <img src={`data:${imageBase64.contentType};base64,${imageBase64.data}`} alt={`Skin-Trivia-${index}`} className='w-[300px] h-fit'/>;
+      };
   
     return (
     <div className='min-h-screen pt-40 px-40 pb-40'>
@@ -69,7 +71,7 @@ const UserList = () => {
                     <tbody className='border-gray-900 border-2'>
                         <tr>
                             <td className='border-gray-900 border-2 px-4'>{index+1}</td>
-                            <td className='border-gray-900 border-2 px-8'>{trivia.image}</td>
+                            <td className='border-gray-900 border-2 px-8 w-2/5'>{renderImage(trivia.image, index)}</td>
                             <td className='border-gray-900 border-2  px-8'>{trivia.name}</td>
                             <td className='border-gray-900 border-2  px-8 w-[200%]'>
                                 <div>

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import env from "react-dotenv";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from 'react-router-dom'
+import { UserContext } from "../../context/userContext";
 
 const LoginPage = () => {
     const navigate = useNavigate()
@@ -10,7 +11,8 @@ const LoginPage = () => {
         username: "",
         password: "",
     })
-    
+    const {user} = useContext(UserContext);
+
     const authLogin = async(e) =>{
         e.preventDefault();
         const {username, email, password} = data;
@@ -29,6 +31,7 @@ const LoginPage = () => {
             setData({});
             toast.success(data.message)
             console.log(data.message)
+            console.log("User :", user)
             navigate('/home')
             
            } 
