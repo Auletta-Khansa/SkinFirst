@@ -7,14 +7,22 @@ export const UserContext = createContext({});
 
 export function UserContextProvider({children}) {
     const [user, setUser] = useState(null);
-    useEffect(()=>{
+    const getUser = async() => {
         let API = env.REACT_APP_SKINFIRST_API;
+        console.log("API :", API)
         if(!user){
-            axios.get(API +'profile').then(({data})=>{
-                setUser(data)
-            })
+            const response = await axios.get(API+"profile")
+            const dataUser = response.data
+            setUser(dataUser)
+            console.log("setUser", user)
+            // axios.get(API +'profile').then(({data})=>{
+            //     setUser(data)
+            // })
+            // console.log("Userrrrrrrrrr :", user)
         }
-        console.log("Userrrrrrrrrr :", user)
+    }
+    useEffect(()=>{
+        getUser()
         // eslint-disable-next-line
     }, [])
     return(
