@@ -1,80 +1,64 @@
 import React, { useState } from 'react'
 
 import { FaRegWindowClose } from "react-icons/fa"
-import { create as ipfsHttpClient } from 'ipfs-http-client'
-import { Buffer } from 'buffer';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 //import env from 'react-dotenv';
 
 const InputSkinTrivia = () => {
-    const [image, setImage] = useState("")
+    const [image, setImage] = useState(null)
     const [name, setName] = useState("")
     const [description, setDescription] = useState([""])
     const navigate = useNavigate();
 
-    let projectID = process.env.REACT_APP_INFURA_PROJECT_ID;
-    let secretKEY = process.env.REACT_APP_INFURA_SECRET_KEY;
-
-    const auth = 'Basic ' + Buffer.from( projectID + ":" + secretKEY ).toString('base64');
-    //const subdomain = 'https://skinfirst-api.infura-ipfs.io';
-
-    const client = ipfsHttpClient({
-        host:'ipfs.infura.io',
-        port:5001,
-        protocol:'https',
-        headers:{
-          authorization: auth
-        }
-    })
-
-    const handleInputChange = (index, event) => {
-        const values = [...description];
-        values[index] = event.target.value;
-        setDescription(values);
+    const handleDescriptionChange = (index, e) => {
+        const updatedDescriptions = [...description];
+        updatedDescriptions[index] = e.target.value;
+        setDescription(updatedDescriptions);
       };
 
-    const handleAddInput = () => {
-        const values = [...description];
-        values.push("");
-        setDescription(values);
+    const addDescription = () => {
+        setDescription([...description, ""]);
     };
 
-    const handleRemoveInput = (index) => {
-        const values = [...description];
-        values.splice(index, 1);
-        setDescription(values);
-      };
+    const removeDescription = (index) => {
+        const updatedDescriptions = [...description];
+        updatedDescriptions.splice(index, 1);
+        setDescription(updatedDescriptions);
+    };
 
-    const uploadToIPFS = async(e) => {
-        e.preventDefault();
-        const file = e.target.files[0];
-        if (typeof file !== 'undefined') {
-            try {
-              const result = await client.add(file)
-              console.log("path",result.path)
-              setImage(`https://skinfirst-api.infura-ipfs.io/ipfs/${result.path}`)
-              console.log(image)
-            } catch (error){
-              console.log("ipfs image upload error: ", error)
-            }
-          }
-
-    }
+    const handleImageChange = (e) => {
+        setImage(e.target.files[0]);
+    };
 
     const inputTrivia = async(e) => {
         e.preventDefault();
         let API = process.env.REACT_APP_SKINFIRST_API
-        try {
-            await axios.post(API+"trivias", {
-                image,
-                name,
-                description
-            });
-            navigate("/skin-trivia");
-        } catch (error) {
-            console.log(error)
+        if (image && name && description) {
+            const formData = new FormData();
+            formData.append("image", image);
+            formData.append("name", name);
+            description.forEach((description) => {
+                formData.append("description[]", description);
+              });
+            try {
+                const response = await axios.post(API+"skinTrivia", formData);
+                if(response.data.error){
+                    toast.error(response.data.error)
+                }
+                else{
+                    toast.success(response.data.message)
+                    navigate("/skin-trivia");
+                }
+            } catch (error) {
+                console.log(error)
+            }
+          }
+        else {
+            toast.error("Please fill the required fields!")
         }
+        
     }
 
   return (
@@ -87,11 +71,11 @@ const InputSkinTrivia = () => {
                     <div className='flex-col flex text-white pb-8'>
                         <h2 className='text-medium 2xl:text-[24px] xl:text-[24px] lg:text-[24px] md:text-[24px] text-[18px]'>Image</h2>
                         <div class="relative w-64 h-64 border-2 border-dashed border-gray-300 bg-white rounded-lg">
-                            <input type="file" id="file-input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onChange={uploadToIPFS}/>
+                            <input type="file" id="file-input" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onChange={handleImageChange}/>
                             <label for="file-input" class="z-absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center items-center text-gray-500 text-lg">
                             {image ? (
                                 <img
-                                    src={image}
+                                    src={URL.createObjectURL(image)}
                                     alt="Preview"
                                     className="object-cover w-[500px] h-full absolute inset-0 rounded-lg p-4"
                                 />
@@ -125,12 +109,12 @@ const InputSkinTrivia = () => {
                                         id={`description-${index}`}
                                         type="text"
                                         value={input}
-                                        onChange={(event) => handleInputChange(index, event)}
+                                        onChange={(event) => handleDescriptionChange(index, event)}
                                         className="border border-gray-300 w-full rounded px-4 py-2 mr-4 text-black 2xl:text-[16px] xl:text-[16px] lg:text-[16px] md:text-[16px] text-[11px]"
                                     />
                                     {description.length > 1 && (
                                         <button
-                                        onClick={() => handleRemoveInput(index)}
+                                        onClick={() => removeDescription(index)}
                                         className="bg-red-500 text-white rounded px-0.5 text-[30px]"
                                         >
                                         <FaRegWindowClose/>
@@ -139,7 +123,7 @@ const InputSkinTrivia = () => {
                                 </div>
                             </div>
                         ))}
-                        <button onClick={handleAddInput} className="bg-primary-2 hover:bg-primary-3 hover:text-primary-2 duration-200 active:bg-primary-2 active:text-white text-white rounded px-4 py-2 mt-4">
+                        <button onClick={addDescription} className="bg-primary-2 hover:bg-primary-3 hover:text-primary-2 duration-200 active:bg-primary-2 active:text-white text-white rounded px-4 py-2 mt-4">
                             + Add more description
                         </button>
                     </div>
