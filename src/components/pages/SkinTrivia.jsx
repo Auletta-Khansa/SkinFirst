@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import env from 'react-dotenv'
 import axios from 'axios'
+import { UserContext } from '../../context/userContext'
 
 // import AtopicDermatitis from '../assets/img/atopic-dermatitis-neck.jpg'
 import ImageSkinTrivia from '../assets/img/skin-trivia.png'
@@ -12,6 +13,8 @@ const SkinTrivia = () => {
     const [currentTrivia, setCurrentTrivia] = useState([])
     const [loading, setLoading] = useState(true)
     let API = env.REACT_APP_SKINFIRST_API
+
+    const {user} = useContext(UserContext);
 
     const getTrivias = async() =>{
         const response = await axios.get(API+"trivias")
@@ -83,8 +86,9 @@ const SkinTrivia = () => {
             </div> */}
         </div>
         <div className='flex flex-col items-center justify-center pt-8'>
-            <Link to='/skin-trivia/input-informations' className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link>
-            <Link to='/users'  className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Lihat database</Link>
+            { user ? (<>
+                {user.user.username === "adminroot" ? <Link to='/skin-trivia/input-informations' className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link> : null}
+                {user.user.username === "adminroot" ? <Link to='/users'  className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Lihat database</Link> : null}</>):(null)}
         </div>
         <div className='py-10'>
             <div className='bg-primary-0 p-8 text-white shadow-2xl min-h-[500px]'>
