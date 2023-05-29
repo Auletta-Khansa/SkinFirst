@@ -45,6 +45,7 @@ const InputSkinTrivia = () => {
             try {
                 const response = await axios.post(API+"skinTrivia", formData);
                 if(response.data.error){
+                    console.log(response.data)
                     toast.error(response.data.error)
                 }
                 else{
@@ -114,6 +115,7 @@ const InputSkinTrivia = () => {
                                     />
                                     {description.length > 1 && (
                                         <button
+                                        type="button"
                                         onClick={() => removeDescription(index)}
                                         className="bg-red-500 text-white rounded px-0.5 text-[30px]"
                                         >
@@ -123,7 +125,7 @@ const InputSkinTrivia = () => {
                                 </div>
                             </div>
                         ))}
-                        <button onClick={addDescription} className="bg-primary-2 hover:bg-primary-3 hover:text-primary-2 duration-200 active:bg-primary-2 active:text-white text-white rounded px-4 py-2 mt-4">
+                        <button type="button" onClick={addDescription} className="bg-primary-2 hover:bg-primary-3 hover:text-primary-2 duration-200 active:bg-primary-2 active:text-white text-white rounded px-4 py-2 mt-4">
                             + Add more description
                         </button>
                     </div>
