@@ -7,9 +7,13 @@ import { UserContext } from '../context/userContext'
 const Navbar = () => {
   const[isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen (!isOpen);
-  const {user} = useContext(UserContext)
-  console.log("User", user)
-  
+
+  const {user} = useContext(UserContext);
+  const {logout} = useContext(UserContext);
+
+  const handleLogout = async() => {
+    await logout()
+  }
   return (
     <div>
       <div className='bg-[#D4D2C5] py-4 fixed w-screen z-50 font-poppins'>
@@ -39,12 +43,14 @@ const Navbar = () => {
                 {/* /MOBILE SIDEBAR */}
               </div>
               <div className='2xl:flex xl:flex lg:flex md:flex justify-end gap-10 text-[15px] hidden'>
-                <ul className='flex gap-6 px-2 py-2 text-[#011A16]'>
+                <ul className='items-center flex gap-6 px-2 py-2 text-[#011A16]'>
                   <li><Link to='/home' className='hover:text-[#011a1671]'>Home</Link></li>
                   <li><Link to='/skin-trivia' className='hover:text-[#011a1671]'>Skin Trivia</Link></li>
                   <li><Link to='/diagnostic' className='hover:text-[#011a1671]'>Diagnostic</Link></li>
                   {!!user && <li><Link to='/profile' className='hover:text-[#011a1671]'>Profile</Link></li>}
-                  <li><Link to='/login' className='bg-[#F0EFE1] hover:bg-[#c6c4a9] shadow-lg duration-200 px-10 py-2 rounded-xl'><span className='text-[#00695B]'>Login</span></Link></li>
+                  {!user ? (
+                    <li><Link to='/login' className='bg-[#F0EFE1] hover:bg-[#c6c4a9] shadow-lg duration-200 px-10 py-2 rounded-xl'><span className='text-[#00695B]'>Login</span></Link></li>
+                  ):(<li><button onClick={handleLogout} className='bg-red-500 hover:bg-[#f50202] shadow-lg duration-200 px-10 py-2 rounded-xl'><span className='text-[#ffffff] '>Logout</span></button></li>)}
                 </ul>
               </div>
             </div>

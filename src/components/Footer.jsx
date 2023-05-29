@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ImgLogo from './assets/img/logo2.png'
 
 import { Link } from 'react-router-dom'
+import { UserContext } from '../context/userContext'
 
 const Footer = () => {
+  const {user} = useContext(UserContext);
   return (
     <>
         <div className='bg-[#D4D2C5] 2xl:px-40 xl:px-40 lg:px-40 px-10 font-poppins'>
@@ -18,7 +20,7 @@ const Footer = () => {
                             <li><Link to='/home' className='hover:text-[#011a1671]'>Home</Link></li>
                             <li><Link to='/skin-trivia' className='hover:text-[#011a1671]'>Skin Trivia</Link></li>
                             <li><Link to='/diagnostic' className='hover:text-[#011a1671]'>Diagnostic</Link></li>
-                            <li><Link to='/home' className='hover:text-[#011a1671]'>Profile</Link></li>
+                            {user ? <li><Link to='/profile' className='hover:text-[#011a1671]'>Profile</Link></li> : null}
                         </ul>
                     </div>
                     <div className='text-[#011A16]'>

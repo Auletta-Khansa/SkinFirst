@@ -30,7 +30,7 @@ function App() {
           <Route path="/users" element={<UserList/>}/>
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/skin-trivia" element={<SkinTrivia/>}/>
-          <Route path="/skin-trivia/input-informatons" element={<InputSkinTrivia/>}/>
+          <Route path="/skin-trivia/input-informations" element={<InputSkinTrivia/>}/>
           <Route path="/diagnostic" element={<Diagnostic/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/signup" element={<SignUpPage/>}/>

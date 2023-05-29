@@ -22,17 +22,18 @@ const LoginPage = () => {
             username,
             email,
             password
-           });
+           }, { withCredentials: true });
            if(data.error){
             toast.error(data.error)
-            console.log(data.error)
+            // console.log(data.error)
            }
            else{
             setData({});
             toast.success(data.message)
-            console.log(data.message)
-            console.log("User :", user)
+            // console.log(data.message)
+            // console.log("User yang login :", user)
             navigate('/home')
+            window.location.reload(); // Refresh halaman
             
            } 
         } catch (error) {
