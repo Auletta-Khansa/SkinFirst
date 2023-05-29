@@ -8,14 +8,16 @@ import ImageSkinTrivia from '../assets/img/skin-trivia.png'
 
 const SkinTrivia = () => {
     const [showTrivia, setShowTrivia] = useState(false)
-
     const [trivias, setTrivias] = useState([])
+    const [currentTrivia, setCurrentTrivia] = useState([])
+    const [loading, setLoading] = useState(true)
     let API = env.REACT_APP_SKINFIRST_API
 
     const getTrivias = async() =>{
         const response = await axios.get(API+"trivias")
         const dataTrivias = response.data
         setTrivias(dataTrivias)
+        setLoading(false)
     }    
 
     useEffect(() => {
@@ -26,8 +28,8 @@ const SkinTrivia = () => {
 
     const handleTrivia = (number) => {
         setShowTrivia(true)
-        setTrivias(trivias[number-1])
-        console.log(trivias)
+        console.log(number)
+        setCurrentTrivia(trivias[number-1])
     }
 
     const renderImage = (imageBase64, index) => {
@@ -81,29 +83,38 @@ const SkinTrivia = () => {
             </div> */}
         </div>
         <div className='flex flex-col items-center justify-center pt-8'>
-            <Link to='/skin-trivia/input-informatons' className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link>
+            <Link to='/skin-trivia/input-informations' className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link>
             <Link to='/users'  className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Lihat database</Link>
         </div>
         <div className='py-10'>
             <div className='bg-primary-0 p-8 text-white shadow-2xl min-h-[500px]'>
-                <div className=''>
-                    {showTrivia ? (
+                {loading ? ( // Kondisi jika masih loading
+                    <p>Loading...</p>
+                ) : showTrivia ? ( // Kondisi jika trivia ditampilkan
+                <>
+                    {currentTrivia ? ( // Kondisi jika trivia memiliki isinya
                     <>
-                        <h1 className='text-[30px] font-medium pb-8'>{trivias.name}</h1>
+                        <h1 className='text-[30px] font-medium pb-8'>{currentTrivia.name}</h1>
                         <div className='flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col gap-10'>
-                            <div className='border-white border-2 border-solid 2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 w-full'>{renderImage(trivias.image)}</div>
-                            <div className='flex-col gap-4 flex'>
-                                {trivias.description.map((description)=>{
-                                    return(
-                                        <div className='flex gap-1'>
-                                            <p>- {description}</p>
-                                        </div>
-                                    )
-                                })}
-                            </div>
+                        <div className='border-white border-2 border-solid 2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 w-full'>
+                            {renderImage(currentTrivia.image)}
                         </div>
-                    </>):(null)}
-                </div>
+                        <div className='flex-col gap-4 flex'>
+                            {currentTrivia.description.map((description) => {
+                            return (
+                                <div className='flex gap-1' key={description}>
+                                <p>- {description}</p>
+                                </div>
+                            );
+                            })}
+                        </div>
+                        </div>
+                    </>
+                    ) : ( // Kondisi jika trivia tidak memiliki isinya
+                    <p>No trivia available.</p>
+                    )}
+                </>
+                ) : <p>Loading...</p>}
             </div>
         </div>
     </section>
