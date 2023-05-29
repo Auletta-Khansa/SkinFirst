@@ -1,9 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import env from "react-dotenv";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from 'react-router-dom'
-import { UserContext } from "../../context/userContext";
 
 const LoginPage = () => {
     const navigate = useNavigate()
@@ -11,7 +10,6 @@ const LoginPage = () => {
         username: "",
         password: "",
     })
-    const {user} = useContext(UserContext);
 
     const authLogin = async(e) =>{
         e.preventDefault();
@@ -29,12 +27,11 @@ const LoginPage = () => {
            }
            else{
             setData({});
-            toast.success(data.message)
             // console.log(data.message)
             // console.log("User yang login :", user)
             navigate('/home')
-            window.location.reload(); // Refresh halaman
-            
+            window.location.reload(); // Refresh halaman    
+            toast.success(data.message)
            } 
         } catch (error) {
             console.log(error);
