@@ -37,7 +37,7 @@ const History = () => {
         </div>
 
         <div className="bg-[#013B31] w-full px-4 pb-6 text-[20px] shadow-xl rounded-xl">
-            <div className="px-4 py-4">
+            {/* <div className="px-4 py-4">
                 <h1 className="text-primary-3 py-2 2xl:text-xl xl:text-xl lg:text-xl md:text-xl text-base font-bold leading-tight tracking-tight ">
                   Diagnostic Image
                 </h1>
@@ -46,7 +46,7 @@ const History = () => {
 
                 </span>
               </div>
-            </div>
+            </div> */}
             <div className="px-4 py-4">
                 <h1 className="text-primary-3 py-2 2xl:text-xl xl:text-xl lg:text-xl md:text-xl text-base font-bold leading-tight tracking-tight ">
                   Disease Name
