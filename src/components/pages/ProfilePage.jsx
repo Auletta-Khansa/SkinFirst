@@ -1,12 +1,49 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import {FaUserCircle} from "react-icons/fa"
 import { Link } from 'react-router-dom'
+import env from "react-dotenv";
+import axios, { AxiosError } from "axios";
+import { toast } from "react-hot-toast";
 
 import { UserContext } from "../../context/userContext";
 
 const ProfilePage = () => {
     const {user} = useContext(UserContext)
+
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [oldPassword, setOldPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+
+    let API = env.REACT_APP_SKINFIRST_API
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.patch(API+`users/${user.user.id}`, {
+                username,
+                email,
+                oldPassword,
+                newPassword,
+            });
+            if(response.data.error){
+                toast.error(response.data.error);
+            }
+            else{
+                toast.success(response.data.message);
+            }
+        } 
+        catch (error) {
+            // toast.error(AxiosError.response.data.error);
+            // toast.error(AxiosError.response.data.error);
+            toast.error("Wrong old password confirmation")
+        }
+    };
+
     
+    
+
+
     if(user){
         return (
             <>
@@ -19,17 +56,17 @@ const ProfilePage = () => {
                                       <FaUserCircle/>
                                   </div>
                                   <div class="flex justify-center text-primary-1 font-bold text-lg">
-                                      <p>Hi, User!</p>
+                                      <p>Hi, {user.user.username}!</p>
                                   </div>
                               </div>
                               <div class="">
-                                  <Link to="/history" class="bg-primary-1 text-primary-0 font-bold py-2 px-10 rounded duration-300 hover:bg-[#a4a399] ">Medical History</Link>
+                                  <Link to="/history" class="bg-primary-1 text-primary-0 font-bold py-2 justify-center flex px-10 rounded duration-300 hover:bg-[#a4a399] ">Medical History</Link>
                               </div>
                           </div>
                       </div>
       
                       <div class="sm:w-2/3 w-full py-8">
-                          <form class="bg-primary-0 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 h-full">
+                          <form onSubmit={handleSubmit} class="bg-primary-0 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 h-full">
                               <h1 class="text-xl font-bold leading-tight tracking-tight text-primary-3 md:text-2xl mb-4">
                                   Account Profile
                               </h1>
@@ -38,10 +75,13 @@ const ProfilePage = () => {
                                       Email
                                   </label>
                                   <input
-                                      class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                      class="shadow appearance-none border rounded w-full py-2 px-3 bg-primary-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
                                       id="email"
                                       type="email"
                                       placeholder="Email"
+                                      value={user.user.email}
+                                      disabled
+                                      onChange={(e) => setEmail(e.target.value)}
                                   />
                               </div>
                               <div class="mb-4">
@@ -49,38 +89,44 @@ const ProfilePage = () => {
                                       Username
                                   </label>
                                   <input
-                                      class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                                      class=" select-none shadow appearance-none border rounded w-full py-2 px-3 bg-primary-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
                                       id="username"
                                       type="text"
                                       placeholder="Username"
+                                      value={user.user.username}
+                                      disabled
+                                      onChange={(e) => setUsername(e.target.value)}
                                   />
                               </div>
                               <div class="mb-4">
                                   <label class="block text-primary-1 font-bold mb-2" for="password">
-                                      Password
+                                      New Password
                                   </label>
                                   <input
                                       class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-                                      id="password"
+                                      id="new-password"
                                       type="password"
-                                      placeholder="********"
+                                      placeholder="If you want to change your password"
+                                      onChange={(e) => setNewPassword(e.target.value)}
                                   />
                               </div>
                               <div class="mb-6">
                                   <label class="block text-primary-1 font-bold mb-2" for="bio">
-                                      Bio
+                                      Old Password
                                   </label>
-                                  <textarea
+                                  <input
                                       class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-                                      id="bio"
-                                      rows="3"
-                                      placeholder="Tell us about yourself"
-                                  ></textarea>
+                                      id="old-password"
+                                      type="password"
+                                      placeholder="Verify with your old password"
+                                      required
+                                      onChange={(e) => setOldPassword(e.target.value)}
+                                  ></input>
                               </div>
                               <div class="flex items-center justify-between">
                                   <button
                                       class="ml-auto bg-primary-1 text-primary-0 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline duration-300 hover:bg-[#a4a399] "
-                                      type="button"
+                                      type="submit"
                                   >
                                       Update Profile
                                   </button>

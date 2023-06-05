@@ -38,6 +38,7 @@ const UserList = () => {
                 <tr > 
                     <th className='border-gray-900 border-2'>No</th>
                     <th className='border-gray-900 border-2'>Username</th>
+                    <th className='border-gray-900 border-2'>Role</th>
                     <th className='border-gray-900 border-2'>Email</th>
                     <th className='border-gray-900 border-2'>Password</th>
                 </tr>
@@ -48,6 +49,7 @@ const UserList = () => {
                         <tr>
                             <td className='border-gray-900 border-2 px-4'>{index+1}</td>
                             <td className='border-gray-900 border-2 px-8'>{user.username}</td>
+                            <td className='border-gray-900 border-2 px-8'>{user.role}</td>
                             <td className='border-gray-900 border-2  px-8'>{user.email}</td>
                             <td className='border-gray-900 border-2  px-8'>{user.password}</td>
                         </tr>

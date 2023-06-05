@@ -21,6 +21,7 @@ const SkinTrivia = () => {
         const dataTrivias = response.data
         setTrivias(dataTrivias)
         setLoading(false)
+        console.log("Numpang role:", user.user.role)
     }    
 
     useEffect(() => {
@@ -87,8 +88,8 @@ const SkinTrivia = () => {
         </div>
         <div className='flex flex-col items-center justify-center pt-8'>
             { user ? (<>
-                {user.user.username === "adminroot" ? <Link to='/skin-trivia/input-informations' className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Input trivia information here</Link> : null}
-                {user.user.username === "adminroot" ? <Link to='/users'  className='text-[20px] text-sky-500 hover:text-sky-700 hover:underline'>Lihat database</Link> : null}</>):(null)}
+                {user.user.role === "ADMIN" ? <Link to='/skin-trivia/input-informations' className='text-[20px] font-bold text-primary-2 hover:text-primary-0 hover:underline'>Input trivia information here</Link> : null}
+                {user.user.role === "ADMIN" ? <Link to='/users'  className='text-[20px] text-primary-2 font-bold hover:text-primary-0 hover:underline'>Lihat database</Link> : null}</>):(null)}
         </div>
         <div className='py-10'>
             <div className='bg-primary-0 p-8 text-white shadow-2xl min-h-[500px]'>
@@ -100,7 +101,7 @@ const SkinTrivia = () => {
                     <>
                         <h1 className='text-[30px] font-medium pb-8'>{currentTrivia.name}</h1>
                         <div className='flex 2xl:flex-row xl:flex-row lg:flex-row md:flex-row flex-col gap-10'>
-                        <div className='border-white border-2 border-solid 2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 w-full'>
+                        <div className='border-white border-2 border-solid 2xl:w-1/2 xl:w-1/2 lg:w-1/2 md:w-1/2 w-full h-fit'>
                             {renderImage(currentTrivia.image)}
                         </div>
                         <div className='flex-col gap-4 flex'>
