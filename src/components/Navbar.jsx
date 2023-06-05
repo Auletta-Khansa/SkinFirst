@@ -32,8 +32,11 @@ const Navbar = () => {
                         <li className='flex items-center gap-1'><FaHome/><Link to='/home' className='hover:text-[#011a1671]'>Home</Link></li>
                         <li className='flex items-center gap-1'><FaSwatchbook/><Link to='/skin-trivia' className='hover:text-[#011a1671]'>Skin Trivia</Link></li>
                         <li className='flex items-center gap-1'><FaDiagnoses/><Link to='/diagnostic' className='hover:text-[#011a1671]'>Diagnostic</Link></li>
-                        <li className='flex items-center gap-1'><FaUser/><Link to='/profile' className='hover:text-[#011a1671]'>Profile</Link></li>
-                        <li><Link to='/login' className='bg-[#F0EFE1] hover:bg-[#c6c4a9] shadow-lg duration-200 px-10 py-2 rounded-xl'><span className='text-[#00695B]'>Login</span></Link></li>
+                        {!!user && <li className='flex items-center gap-1'><FaUser/><Link to='/profile' className='hover:text-[#011a1671]'>Profile</Link></li>}
+                        
+                        {!user ? (
+                          <li><Link to='/login' className='bg-[#F0EFE1] hover:bg-[#c6c4a9] shadow-lg duration-200 px-10 py-2 rounded-xl'><span className='text-[#00695B]'>Login</span></Link></li>
+                        ):(<li><button onClick={handleLogout} className='bg-red-500 hover:bg-[#f50202] shadow-lg duration-200 px-10 py-2 rounded-xl'><span className='text-[#ffffff] '>Logout</span></button></li>)}
                       </ul>
                       <div className=" text-black">
                         <FaBars onClick={toggle}/>

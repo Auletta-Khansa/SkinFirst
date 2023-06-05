@@ -13,10 +13,14 @@ const SignUpPage = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const navigate = useNavigate();
 
+    let API = env.REACT_APP_SKINFIRST_API
+    console.log("backend API:", API)
+
     const addUser = async(e) => {
         e.preventDefault();
         const {username, email, password} = data
         let API = env.REACT_APP_SKINFIRST_API
+        console.log("backend API:", API)
         try {
             if(password === confirmPassword){
                 const {data} = await axios.post(API+"users", {
