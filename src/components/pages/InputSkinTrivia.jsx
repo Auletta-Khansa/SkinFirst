@@ -4,7 +4,7 @@ import { FaRegWindowClose } from "react-icons/fa"
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-//import env from 'react-dotenv';
+import env from 'react-dotenv';
 
 const InputSkinTrivia = () => {
     const [image, setImage] = useState(null)
@@ -34,7 +34,8 @@ const InputSkinTrivia = () => {
 
     const inputTrivia = async(e) => {
         e.preventDefault();
-        let API = process.env.REACT_APP_SKINFIRST_API
+        let API = env.REACT_APP_SKINFIRST_API
+        console.log(API);
         if (image && name && description) {
             const formData = new FormData();
             formData.append("image", image);
