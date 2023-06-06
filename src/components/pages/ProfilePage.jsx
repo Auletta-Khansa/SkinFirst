@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import {FaUserCircle} from "react-icons/fa"
 import { Link } from 'react-router-dom'
 import env from "react-dotenv";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { toast } from "react-hot-toast";
 
 import { UserContext } from "../../context/userContext";
