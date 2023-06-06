@@ -83,7 +83,7 @@ const SignUpPage = () => {
                             </div>
                             <div>
                                 <label for="confirm-password" class="block mb-2 text-sm font-medium text-primary-1">Confirm Password</label>
-                                <input type="confirm-password" name="confirm-password" id="confirm-password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" require onChange={(e)=>setConfirmPassword(e.target.value)}/>
+                                <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" require onChange={(e)=>setConfirmPassword(e.target.value)}/>
                             </div>
                             {/* <div class="flex items-start">
                                 <div class="flex items-center h-5">
