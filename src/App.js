@@ -15,14 +15,14 @@ import { UserContextProvider } from "./context/userContext";
 
 import { Toaster } from "react-hot-toast";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
   return (
     <>
     <UserContextProvider>
-      <BrowserRouter basename="/">
+      <HashRouter basename="/">
         <Navbar/>
         <Toaster position="top-right" toastOptions={{duration: 2000}}/>
         <Routes>
@@ -40,7 +40,7 @@ function App() {
           <Route path="*" element={<NotFound/>}/>
         </Routes>
         <Footer/>
-      </BrowserRouter>
+      </HashRouter>
     </UserContextProvider>
     </>
   );
